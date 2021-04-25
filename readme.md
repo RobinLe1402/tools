@@ -10,15 +10,15 @@ This is achieved by substituting disallowed characters by similar looking charac
 
 **Conversion table**
 ```
-\/	--\>	／
-\	--\>	＼
-\:	--\>	：
-\*	--\>	＊
-?	--\>	？
-"	--\>	''
-\<	--\>	＜
-\>	--\>	＞
-\|	--\>	｜
+/	-->	／
+\	-->	＼
+:	-->	：
+*	-->	＊
+?	-->	？
+"	-->	''
+<	-->	＜
+>	-->	＞
+|	-->	｜
 ```
 
 
