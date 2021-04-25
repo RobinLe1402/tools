@@ -9,12 +9,12 @@
 
 
 
-# Output directorys - custom
+# Output directories - custom
 Build/
 Bin32/
 Bin64/
 
-# Output directorys - default
+# Output directories - default
 #Debug/
 #Release/
 
