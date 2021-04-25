@@ -33,5 +33,8 @@
     <Image Include="..\..\..\RobinLe.ico">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="..\..\RobinLe.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

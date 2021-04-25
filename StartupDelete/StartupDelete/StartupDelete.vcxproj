@@ -157,6 +157,7 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\..\..\RobinLe.ico" />
+    <Image Include="..\..\RobinLe.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
