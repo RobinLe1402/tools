@@ -8,9 +8,10 @@ e.g. StartupDelete.exe C:\TEMP
 */
 
 
-
-#include <filesystem>
 #include <Windows.h>
+
+void ClearDir(const wchar_t* szPath);
+void DeleteDir(const wchar_t* szPath);
 
 
 int WINAPI WinMain(
@@ -50,7 +51,9 @@ int WINAPI WinMain(
 	}
 
 	// directory doesn't exist
-	if (!std::filesystem::exists(szPath) || !std::filesystem::is_directory(szPath))
+	DWORD dwFileAttribs = GetFileAttributesW(szPath);
+
+	if (dwFileAttribs == INVALID_FILE_ATTRIBUTES || !(dwFileAttribs & FILE_ATTRIBUTE_DIRECTORY))
 	{
 		const wchar_t szErrorPrefix[] = L"Directory doesn't exist:\n\"";
 		const wchar_t szErrorSuffix[] = L"\"";
@@ -67,9 +70,61 @@ int WINAPI WinMain(
 		return 1;
 	}
 
-	// directory exists --> recursuvely delete all files and folders inside
-	for (const auto& entry : std::filesystem::directory_iterator(szPath))
-		std::filesystem::remove_all(entry.path());
+	ClearDir(szPath);
 
 	return 0;
+}
+
+void ClearDir(const wchar_t* szPath)
+{
+	size_t iPathLen = wcslen(szPath);
+	bool bTrailingBackslash = false;
+	if (szPath[iPathLen - 1] == L'\\')
+	{
+		bTrailingBackslash = true;
+		--iPathLen;
+	}
+	const size_t iMaskLen = wcslen(szPath) + 3;
+	wchar_t* szMask = new wchar_t[iMaskLen];
+	wcscpy_s(szMask, iMaskLen, szPath);
+	if (!bTrailingBackslash)
+		wcscat_s(szMask, iMaskLen, L"\\");
+	wcscat_s(szMask, iMaskLen, L"*");
+
+	WIN32_FIND_DATAW wfd = {};
+	HANDLE hFind = FindFirstFileW(szMask, &wfd);
+	if (hFind == INVALID_HANDLE_VALUE)
+		return; // no files
+
+	wchar_t szFullPath[MAX_PATH + 1] = {};
+	wcscpy_s(szFullPath, szPath);
+	if (!bTrailingBackslash)
+		wcscat_s(szFullPath, L"\\");
+	do
+	{
+		if (wcscmp(wfd.cFileName, L".") == 0 || wcscmp(wfd.cFileName, L"..") == 0)
+			continue;
+
+		szFullPath[iPathLen + 1] = L'\0';
+		wcscat_s(szFullPath, wfd.cFileName);
+
+		if (wfd.dwFileAttributes & FILE_ATTRIBUTE_READONLY)
+		{
+			if (!SetFileAttributesW(szFullPath, wfd.dwFileAttributes & ~FILE_ATTRIBUTE_READONLY))
+				continue;
+		}
+
+		if (wfd.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY)
+			DeleteDir(szFullPath);
+		else
+			DeleteFileW(szFullPath);
+	} while (FindNextFileW(hFind, &wfd));
+	FindClose(hFind);
+
+}
+
+void DeleteDir(const wchar_t* szPath)
+{
+	ClearDir(szPath);
+	RemoveDirectoryW(szPath);
 }
