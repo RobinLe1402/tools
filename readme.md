@@ -9,17 +9,17 @@ Changes the clipboard (if the current content is text compatible) to be usable a
 This is achieved by substituting disallowed characters by similar looking characters.
 
 ### Conversion table
-```
-/	-->	／
-\	-->	＼
-:	-->	：
-*	-->	＊
-?	-->	？
-"	-->	''
-<	-->	＜
->	-->	＞
-|	-->	｜
-```
+| Original            | Replacement              |
+|---------------------|--------------------------|
+| ```/```             |  ```／``` (```U+FF0F```) |
+| ```\```             |  ```＼``` (```U+FF3C```) |
+| ```:```             |  ```：``` (```U+FF1A```) |
+| ```*```             |  ```＊``` (```U+FF0A```) |
+| ```?```             |  ```？``` (```U+FF1F```) |
+| ```"```             |  ```''``` (2x ```'```)   |
+| ```<```             |  ```＜``` (```U+FF1C```) |
+| ```>```             |  ```＞``` (```U+FF1E```) |
+| <code>&#124;</code> |  ```｜``` (```U+FF5C```) |
 
 
 ## StartupDelete
