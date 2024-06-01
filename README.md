@@ -1,6 +1,8 @@
 ﻿# RobinLe Tools
 This is a collection of small Windows tools I created.
 
+Compatible with Windows XP.
+
 
 
 ## FilenameFriendlyClipboard
