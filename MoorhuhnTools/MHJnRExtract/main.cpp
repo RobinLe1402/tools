@@ -1,7 +1,9 @@
 #include "MHJNR-XXL.hpp"
 
+typedef struct IUnknown IUnknown;
+
 #include <cstdio>
-#include <ShlObj_core.h>
+#include <ShlObj.h>
 
 void PrintUsage(const wchar_t* szArgv0);
 

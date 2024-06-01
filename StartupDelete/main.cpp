@@ -8,6 +8,8 @@ e.g. StartupDelete.exe C:\TEMP
 */
 
 
+typedef struct IUnknown IUnknown;
+
 #include <Windows.h>
 
 void ClearDir(const wchar_t* szPath);

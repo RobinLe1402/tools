@@ -6,6 +6,8 @@ CHANGE CLIPBOARD CONTENTS (IF TEXT) TO BE USABLE AS FILENAME
 
 
 
+typedef struct IUnknown IUnknown;
+
 #include <stdint.h>
 #include <string>
 #include <Windows.h>
