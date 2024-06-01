@@ -14,5 +14,7 @@
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
   </ItemDefinitionGroup>
-  <ItemGroup />
+  <PropertyGroup>
+    <XPDeprecationWarning>false</XPDeprecationWarning>
+  </PropertyGroup>
 </Project>
