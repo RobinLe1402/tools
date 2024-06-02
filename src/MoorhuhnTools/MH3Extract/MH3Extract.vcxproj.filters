@@ -18,25 +18,25 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="MH3_DAT.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="MH3_DAT.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="resource.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="RobinLe.rc">
+    <ResourceCompile Include="resource.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="..\..\..\RobinLe.ico">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="..\..\RobinLe.ico">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="..\RobinLe.ico">
+    <Image Include="..\..\..\res\RobinLe Console.ico">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

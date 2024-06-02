@@ -18,12 +18,12 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MH3_DAT.cpp">
+    <ClCompile Include="MHJNR-XXL.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="MH3_DAT.hpp">
+    <ClInclude Include="MHJNR-XXL.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="resource.h">
@@ -36,7 +36,7 @@
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="..\..\RobinLe Console.ico">
+    <Image Include="..\..\..\res\RobinLe Console.ico">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>
