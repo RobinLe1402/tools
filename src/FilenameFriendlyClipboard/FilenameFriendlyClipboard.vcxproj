@@ -159,10 +159,8 @@
     <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="RobinLe.rc" />
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="..\..\res\RobinLe.ico" />
+    <ResourceCompile Include="..\..\res\RobinLe_Icon.rc" />
+    <ResourceCompile Include="FilenameFriendlyClipboard.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

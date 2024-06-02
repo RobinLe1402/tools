@@ -146,13 +146,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MH3_DAT.hpp" />
-    <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="resource.rc" />
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="..\..\..\res\RobinLe Console.ico" />
+    <ResourceCompile Include="..\..\..\res\RobinLeCMD_Icon.rc" />
+    <ResourceCompile Include="MH3Extract.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
