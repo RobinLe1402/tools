@@ -1,4 +1,11 @@
-﻿# RobinLe Tools
+﻿> [!IMPORTANT]
+> On 2024-10-13, I deprecated this repository by creating separate repos
+> for the applications previously created here:
+> [FilenameFriendlyClipboard](https://rle.sh/git-repo/FilenameFriendlyClipboard),
+> [MoorhuhnTools](https://rle.sh/git-repo/MoorhuhnTools),
+> [ClearDir](https://rle.sh/git-repo/ClearDir) (previously StartupDelete).
+
+# RobinLe Tools
 This is a collection of small Windows tools I created.
 
 Compatible with Windows XP.
